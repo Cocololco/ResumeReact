@@ -1,0 +1,115 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  margin: 0;
+}
+
+.playground {
+  position: relative;
+  width: 80vw; /* Set the width to 80% of the viewport width */
+  height: 80vw; /* Set the width to 80% of the viewport width */
+  border: 2px solid #000;
+  background-color: #87CEEB; /* Light blue background */
+  background-image: url('../img/game/tile/wall.png'); /* Correctly reference the background image */
+  background-size:auto; /* Ensure the image covers the entire background */
+  background-repeat: repeat; /* Prevent the image from repeating */
+  user-select: none; /* Standard */
+  -webkit-user-select: none; /* Chrome, Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+#player1Cannon {
+  left: 0;
+  transform: rotate(90deg); /* Correct rotation syntax */
+}
+#player2Cannon {
+  right: 0;
+  transform: rotate(-90deg); /* Correct rotation syntax */
+}
+.cannon {
+  position: absolute;
+  width: 10%; 
+  z-index:1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.bullet {
+  position: absolute;
+  width: 1%; /* Adjust the projectile diameter as needed */
+  background-color: transparent; /* Black projectile */
+  border-radius: 50%; /* Make the projectile round */
+  display: none;
+  top: 49%;
+  z-index:100;
+  background-image: url('../img/game/tile/cannon_ball.png'); /* Correctly reference the background image */
+  background-size:cover; /* Ensure the image covers the entire background */
+  background-repeat: repeat; /* Prevent the image from repeating */
+}
+
+.obstacle{
+  position: absolute;
+  background-color: transparent; /* Blue obstacle */
+  display: flex;
+  width: 10%; /* Adjust the cannon width as needed */
+  height: 10%; /* Adjust the cannon height as needed */
+  margin:auto;
+  color:white;
+  text-align: center;
+  border-radius: 2px;
+  align-items:center;
+  justify-content:center;
+  background-image: url('../img/game/tile/block.png'); /* Correctly reference the background image */
+  background-size:cover; /* Ensure the image covers the entire background */
+  background-repeat: repeat; /* Prevent the image from repeating */
+  transition: display 1s ease-out 
+}
+
+.target{
+  position: absolute;
+  background-color: transparent; /* Blue obstacle */
+  display: flex;
+  width: 10%; /* Adjust the cannon width as needed */
+  height: 10%; /* Adjust the cannon height as needed */
+  margin:auto;
+  color:white;
+  z-index:100;
+  text-align: center;
+  border-radius: 2px;
+  align-items:center;
+  justify-content:center;
+}
+
+.exclusion{
+  position: absolute;
+  background-color: #868535; /* Blue obstacle */
+  display: none;
+  width: 10%; /* Adjust the cannon width as needed */
+  height: 10%; /* Adjust the cannon height as needed */
+  margin:auto;
+  color:rgb(34, 33, 27);
+  text-align: center;
+  border-radius: 1%;
+  align-items:center;
+  justify-content:center;
+}
+
+.cursor {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red; /* Customize your cursor look here */
+  border-radius: 50%;
+  pointer-events: none; /* Ensure the cursor div doesn't block interactions */
+  display: none; /* Hide the cursor initially */
+}
+
+#playground {
+  /*cursor: none; /* Hide the default cursor when hovering over playground */
+}
