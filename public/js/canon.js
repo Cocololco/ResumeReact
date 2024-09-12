@@ -6,7 +6,7 @@ class Game{
     this.numberOfTargets = 10;
     this.maxBounceBullet = 6;
     this.maxBounceObstacle=6;
-    this.numberOfObstacles=60;
+    this.numberOfObstacles=3;
     this.numberOfCannons=4;
     this.obstacleWidth=10/3;
     this.obstacleHeight=5;
@@ -61,20 +61,27 @@ class Game{
   reset(){
     // Delete Bullets
     Bullet.deleteAllBullets(this);
+
+    Cannon.deleteAll(this);
   
     // Delete Obstacles
     Obstacle.deleteAll(this);
+
     Target.deleteAll(this);
-    Cannon.deleteAll(this);
+
     ExclusionZone.deleteAll(this);
+
     this.initialized = false; // Mark the game as initialized
+    
     console.log("reset finish")
+    this.stopBulletUpdate()
+    this.stopObstacleUpdate()
     // Recreate Targets and Obstacles
     // Target.createSeveral(this);
     // Obstacle.createSeveral(this);
   }
   finish(){
-    this.reset()
+    //this.reset()
   }
 
   calculateElapsedTime(){
@@ -134,7 +141,7 @@ class Game{
 
 class  Playground{
   constructor(divId,sizex,sizey) {
-      console.log("create Playground")
+      // console.log("create Playground")
       this.divId = divId;
       this.sizex = sizex;
       this.sizey = sizey;
@@ -674,7 +681,7 @@ class Bullet{
 
 class Target{
   constructor(game,divId,positionx,positiony,width,height) {
-    console.log("create Target")
+    // console.log("create Target")
     this.divId = divId;
     this.positionx = positionx;
     this.positiony = positiony;
@@ -800,7 +807,7 @@ resetButton.addEventListener("click", () => {
   }
 
   // Check if the game is already initialized
-  if (game.initialized === true) {
+  if (game.initialized == true) {
     game.reset();
   } else {
     game.initializeGame();
