@@ -43,6 +43,7 @@
         this.positionx = positionx;
         this.positiony = positiony;
         this.angle = 0;
+        this.width = 10;
         this.speed = 1;
         this.aimx = 50;
         this.aimy = 50;
@@ -81,7 +82,7 @@
       const width = rect.width;
       const height = width;
       
-      let left=this.positionx-(100*width/playground.width)/2;
+      let left=this.positionx-(this.width)/2;
       let top=this.positiony-(100*height/playground.height)/2;
       
       // Update the position of the cannon div
