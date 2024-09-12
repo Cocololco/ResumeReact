@@ -8,7 +8,7 @@
   const targets = [];
 
   let obstaclesId=0
-  const numberOfObstacles=75
+  const numberOfObstacles=5
   const obstacleWidth=10/3
   const obstacleHeight=5
   const maxBounceObstacle=6
@@ -17,7 +17,7 @@
   const maxBounceBullet=6
 
   const targetarea=[[85,0],[100,100]]
-  const numberOfTargets=10
+  const numberOfTargets=3
 
   class  Playground{
     constructor(divId,sizex,sizey) {
@@ -559,6 +559,10 @@
       if (index > -1) {
         targets.splice(index, 1); // Remove the bullet from the array
       }
+      //If no more target, game is finished
+      if(targets.length==0){
+        finishGame()
+      }
 
     }
 
@@ -632,15 +636,7 @@
     // Add event listeners and intervals
   
     resetButton.addEventListener("click", () => {
-      // Delete Bullets
-      Bullet.deleteAllBullets();
-  
-      // Delete Obstacles
-      Obstacle.deleteAllObstacles();
-  
-      // Recreate Targets and Obstacles
-      Target.createSeveral(numberOfTargets);
-      Obstacle.createSeveral(numberOfObstacles);
+      resetGame()
     });
   
     playground.div.addEventListener("click", (e) => {
@@ -665,6 +661,25 @@
     }, 1000);
   
     gameInitialized = true; // Mark the game as initialized
+
+
+
+  }
+
+  function resetGame(){
+    // Delete Bullets
+    Bullet.deleteAllBullets();
+  
+    // Delete Obstacles
+    Obstacle.deleteAllObstacles();
+
+    // Recreate Targets and Obstacles
+    Target.createSeveral(numberOfTargets);
+    Obstacle.createSeveral(numberOfObstacles);
+  }
+
+  function finishGame(){
+    resetGame()
   }
   
   initializeGame();
