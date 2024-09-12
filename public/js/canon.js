@@ -8,7 +8,7 @@
   const targets = [];
 
   let obstaclesId=0
-  const numberOfObstacles=5
+  const numberOfObstacles=60
   const obstacleWidth=10/3
   const obstacleHeight=5
   const maxBounceObstacle=6
@@ -17,7 +17,7 @@
   const maxBounceBullet=6
 
   const targetarea=[[85,0],[100,100]]
-  const numberOfTargets=3
+  const numberOfTargets=10
 
   class  Playground{
     constructor(divId,sizex,sizey) {

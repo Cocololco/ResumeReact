@@ -4,6 +4,9 @@ import '../assets/css/canon.css';
 
 function Game() {
   useEffect(() => {
+    document.title = 'Canon';
+  }, []); // This will run when the component is mounted
+  useEffect(() => {
     // Check if the script is already added
     const existingScript = document.querySelector('script[src="js/canon.js"]');
   
