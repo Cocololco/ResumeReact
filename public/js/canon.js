@@ -4,9 +4,9 @@ class Game{
   constructor() {
     this.date = new Date('2023-09-01T00:00:00');
     this.numberOfTargets = 10;
-    this.maxBounceBullet = 6;
+    this.maxBounceBullet = 3;
     this.maxBounceObstacle=6;
-    this.numberOfObstacles=3;
+    this.numberOfObstacles=50;
     this.numberOfCannons=4;
     this.obstacleWidth=10/3;
     this.obstacleHeight=5;
@@ -81,7 +81,7 @@ class Game{
     // Obstacle.createSeveral(this);
   }
   finish(){
-    //this.reset()
+    this.reset()
   }
 
   calculateElapsedTime(){
