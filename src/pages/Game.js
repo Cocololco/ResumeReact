@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Main from '../Main';
 import '../assets/css/canon.css';  
+import HighscoreTable from '../components/HighscoreTable';
 
 function Game() {
   useEffect(() => {
@@ -29,8 +30,11 @@ function Game() {
         <div className="game-container">
           <div className="playground" id="playground">
           </div>
-          {/* <button id="resetButton" className="btn btn-secondary mt-1">Reset</button> */}
+          <button id="resetButton" className="btn btn-secondary mt-1">Reset</button>
           <div id="infoBox"></div>
+          {/* <HighscoreTable title="Best Time"/>
+          <HighscoreTable title="Best Bullets Usage"/>
+          <HighscoreTable title="Least Block Broken"/> */}
         </div>
       </Main>
     </div>
