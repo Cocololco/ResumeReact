@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Main from '../Main';
 import AboutCard from '../components/AboutCard';
 const Engineer={
@@ -28,6 +28,9 @@ const Interest={
   )
 }
 function About() {
+  useEffect(() => {
+    document.title = 'Corentin Hillion';
+  }, []); // This will run when the component is mounted
   return (
     <div>
       <Main>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Main from '../Main';
 import TimelineCard from '../components/TimelineCard';
 import TimelineDetails from '../components/TimelineDetails';
@@ -85,6 +85,9 @@ const Icam = {
 
 
 function Experiences() {
+  useEffect(() => {
+    document.title = 'Skills Corentin';
+  }, []); // This will run when the component is mounted
   return (
     <div>
       <Main>

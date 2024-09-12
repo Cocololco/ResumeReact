@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Main from '../Main';
 import SocialCard from '../components/SocialCard';
 
 function Contact() {
+  useEffect(() => {
+    document.title = 'Contact Corentin';
+  }, []); // This will run when the component is mounted
   return (
     <div>
       <Main>

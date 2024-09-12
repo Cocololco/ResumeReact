@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Main from '../Main';
 import SkillTable from '../components/SkillTable';
 
@@ -33,6 +33,9 @@ const langSkills = [
 ];
 
 function Skills() {
+  useEffect(() => {
+    document.title = 'Skills Corentin';
+  }, []); // This will run when the component is mounted
   return (
     <div>
       <Main >
