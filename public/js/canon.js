@@ -7,7 +7,7 @@ class Game{
     this.maxBounceBullet = 6;
     this.maxBounceObstacle=6;
     this.numberOfObstacles=60;
-    this.numberOfCannons=2;
+    this.numberOfCannons=4;
     this.obstacleWidth=10/3;
     this.obstacleHeight=5;
     this.obstaclesId=0;
@@ -23,7 +23,7 @@ class Game{
     this.targets = [];
     this.gameArea=[[0,0],[100,100]];
     this.bulletInterval = null;
-
+    this.obstacleInterval = null;
   }
   
   start(){
@@ -49,14 +49,9 @@ class Game{
     
     this.stopBulletUpdate()
     this.startBulletUpdate()
+    this.stopObstacleUpdate()
+    this.startObstacleUpdate()
   
-    setInterval(() => {
-      // let obstacleToCreate = this.numberOfObstacles + this.numberOfTargets - this.obstacles;
-      // obstacleToCreate = Math.min(obstacleToCreate, 2);
-      // if (obstacleToCreate >= 0) {
-      //   Obstacle.createSeveral(obstacleToCreate);
-      // }
-    }, 1000);
   
     this.initialized = true; // Mark the game as initialized
 
@@ -113,6 +108,25 @@ class Game{
     if (this.bulletInterval !== null) {
       clearInterval(this.bulletInterval);
       this.bulletInterval = null; // Reset the interval ID
+    }
+  }
+  startObstacleUpdate() {
+    this.obstacleInterval = setInterval(() => {
+      let obstacleToCreate = this.numberOfObstacles + this.numberOfTargets - this.obstacles.length;
+      obstacleToCreate = Math.min(obstacleToCreate, 2);
+      //console.log(this.numberOfObstacles,this.numberOfTargets,this.obstacles.length)
+      if (obstacleToCreate >= 0) {
+        Obstacle.createSeveral(this,obstacleToCreate);
+      }
+    }, 10);
+    
+    
+  }
+  stopObstacleUpdate() {
+    // Clear the interval if it exists
+    if (this.obstacleInterval !== null) {
+      clearInterval(this.obstacleInterval);
+      this.obstacleInterval = null; // Reset the interval ID
     }
   }
 
@@ -424,8 +438,9 @@ class  Obstacle{
   }
 
   // Static method to create multiple obstacles
-  static createSeveral(game) {
-    for (let i = 0; i <= game.numberOfObstacles; i++) {
+  static createSeveral(game,obstacleToCreate=null) {
+    if(obstacleToCreate==null){obstacleToCreate=game.numberOfObstacles}
+    for (let i = 0; i <= obstacleToCreate; i++) {
       let positionx,positiony,width,height;  
       [positionx,positiony,width,height]=this.generateNew(game)
       
