@@ -29,7 +29,7 @@ function Game() {
         <div className="game-container">
           <div className="playground" id="playground">
           </div>
-          <button id="resetButton" className="btn btn-secondary mt-1">Reset</button>
+          {/* <button id="resetButton" className="btn btn-secondary mt-1">Reset</button> */}
           <div id="infoBox"></div>
         </div>
       </Main>

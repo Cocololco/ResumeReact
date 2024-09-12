@@ -635,9 +635,9 @@
   
     // Add event listeners and intervals
   
-    resetButton.addEventListener("click", () => {
-      resetGame()
-    });
+    // resetButton.addEventListener("click", () => {
+    //   resetGame()
+    // });
   
     playground.div.addEventListener("click", (e) => {
       const rect = playground.div.getBoundingClientRect();
