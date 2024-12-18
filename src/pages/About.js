@@ -6,7 +6,7 @@ const Engineer={
   title:'Engineer',
   content: (
     <>
-      Found of startup <a href="https://fablense.com" target="_blank" rel="noopener noreferrer">FabLense</a>, an engineer with over ten years experience, turned programmer with a passion for problem‑solving through coding.<br />
+      Founder of startup <a href="https://fablense.com" target="_blank" rel="noopener noreferrer">FabLense</a>, an engineer with over ten years experience, turned programmer with a passion for problem‑solving through coding.<br />
       Highly efficient, adaptable and capable of mastering new software and programming languages.<br />
       Proficient in Development PHP, Laravel, HTML5/CSS, Javascript, React, RESTAPI, MySQL, SQL, Python, JAVA, C, VBA, Microsoft Office Suite, PowerBI,
       Solidworks, Autocad and Android Studio.
